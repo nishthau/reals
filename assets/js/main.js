@@ -318,6 +318,64 @@
   // Add the Terms and Conditions content to the modal
   document.getElementById("termsAndConditions").innerHTML = termsCond;
   
+
+  var privacyContent ='<h3>Privacy Policy</h3>';                                                     
+  privacyContent +='<p><strong>Effective Date:</strong> 09/12/2024</p>';
+  privacyContent +='  <p>Reals ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, store, and share your information when you use our services.</p>';
+  privacyContent +='<br>';
+  privacyContent +='  <h5>1. Information We Collect</h5>';
+  privacyContent +='  <p>We may collect the following types of information:</p>';
+  privacyContent +='  <ul>';
+  privacyContent +='    <li><strong>Personal Information:</strong> Name, email address, phone number, and payment details provided during account creation or transactions.</li>';
+  privacyContent +='    <li><strong>Usage Data:</strong> Information about how you use our services, including IP address, device information, and browsing activity.</li>';
+  privacyContent +='    <li><strong>Transactional Data:</strong> Records of mobile recharges, data top-ups, and wallet usage.</li>';
+  privacyContent +='  </ul>';
+  privacyContent +='<br>';
+  privacyContent +='  <h5>2. How We Use Your Information</h5>';
+  privacyContent +='  <p>We use the information we collect for the following purposes:</p>';
+  privacyContent +='  <ul>';
+  privacyContent +='    <li>To process transactions, including mobile recharges and data top-ups.</li>';
+  privacyContent +='    <li>To provide and improve our services.</li>';
+  privacyContent +='    <li>To secure your account and prevent fraud.</li>';
+  privacyContent +='    <li>To send you updates, promotional offers, and service notifications.</li>';
+  privacyContent +='    <li>To comply with legal obligations and resolve disputes.</li>';
+  privacyContent +='  </ul>';
+  privacyContent +='<br>';
+  privacyContent +='  <h5>3. How We Share Your Information</h5>';
+  privacyContent +='  <p>We do not sell or rent your personal information to third parties. However, we may share your information with:</p>';
+  privacyContent +='  <ul>';
+  privacyContent +='    <li><strong>Service Providers:</strong> Third-party partners who assist with payment processing, security, and other operational tasks.</li>';
+  privacyContent +='    <li><strong>Legal Authorities:</strong> If required by law or in response to a valid legal request.</li>';
+  privacyContent +='  </ul>';
+  privacyContent +='<br>';
+  privacyContent +='  <h5>4. Data Security</h5>';
+  privacyContent +='  <p>We use industry-standard encryption and security measures to protect your personal information. Despite our efforts, no system can guarantee 100% security.</p>';
+  privacyContent +='<br>';
+  privacyContent +='  <h5>5. Your Rights</h5>';
+  privacyContent +='  <p>You have the right to:</p>';
+  privacyContent +='  <ul>';
+  privacyContent +='    <li>Access, update, or delete your personal information by logging into your account or contacting us.</li>';
+  privacyContent +='    <li>Opt-out of receiving marketing communications by following the unsubscribe instructions in our emails.</li>';
+  privacyContent +='  </ul>';
+  privacyContent +='<br>';
+  privacyContent +='  <h5>6. Cookies and Tracking Technologies</h5>';
+  privacyContent +='  <p>We use cookies and similar technologies to improve your experience on our website. These help us analyze usage patterns and deliver personalized content.</p>';
+  privacyContent +='<br>';
+  privacyContent +='  <h5>7. Third-Party Links</h5>';
+  privacyContent +='  <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of these sites and encourage you to review their policies.</p>';
+  privacyContent +='<br>';
+  privacyContent +='  <h5>8. Changes to This Policy</h5>';
+  privacyContent +='  <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page, and the "Effective Date" will be revised accordingly.</p>';
+  privacyContent +='<br>';
+  privacyContent +='  <h5>9. Contact Us</h5>';
+  privacyContent +='  <p>If you have questions about this Privacy Policy or how we handle your information, please contact us:</p>';
+  privacyContent +='  <p><strong>Email:</strong> relas@gmail.com</p>';
+  privacyContent +='  <p><strong>Phone:</strong> +1 999-999-9999</p>';
+
+
+    // Add Privacy Policy content to the modal
+    document.getElementById("privacyPolicyContent").innerHTML = privacyContent;
+  
 // // Clear Login form on close
 // $(document).ready(function() {
 //   // When the modal is hidden, clear the form fields
@@ -340,3 +398,12 @@
 //       $('#freeTrialForm')[0].reset();
 //   });
 // });
+
+document.querySelectorAll('.open-modal').forEach(function (link) {
+  link.addEventListener('click', function (event) {
+    event.preventDefault();
+    const modalId = link.getAttribute('data-toggle'); // Get the target modal ID
+    const modal = new bootstrap.Modal(document.querySelector(modalId));
+    modal.show();
+  });
+});
