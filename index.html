@@ -1,366 +1,394 @@
-/**
-* Template Name: Arsha
-* Updated: Jan 29 2024 with Bootstrap v5.3.2
-* Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+<!DOCTYPE html>
+<html lang="en">
 
-(function() {
-  "use strict";
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  /**
-   * Easy selector helper function
-   */
-  const select = (el, all = false) => {
-    el = el.trim()
-    if (all) {
-      return [...document.querySelectorAll(el)]
-    } else {
-      return document.querySelector(el)
-    }
-  }
+  <title>Reals</title>
+  <!-- <meta content="" name="description"> -->
+  <!-- <meta content="" name="keywords"> -->
 
-  /**
-   * Easy event listener function
-   */
-  const on = (type, el, listener, all = false) => {
-    let selectEl = select(el, all)
-    if (selectEl) {
-      if (all) {
-        selectEl.forEach(e => e.addEventListener(type, listener))
-      } else {
-        selectEl.addEventListener(type, listener)
-      }
-    }
-  }
+  <!-- Disable cache -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
 
-  /**
-   * Easy on scroll event listener 
-   */
-  const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
-  }
+  <!-- Favicons -->
+  <link href="assets/img/logo_favicon.jpg" rel="icon">
+  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
 
-  /**
-   * Navbar links active state on scroll
-   */
-  let navbarlinks = select('#navbar .scrollto', true)
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200
-    navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
-      let section = select(navbarlink.hash)
-      if (!section) return
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active')
-      } else {
-        navbarlink.classList.remove('active')
-      }
-    })
-  }
-  window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
-
-  /**
-   * Scrolls to an element with header offset
-   */
-  const scrollto = (el) => {
-    let header = select('#header')
-    let offset = header.offsetHeight
-
-    let elementPos = select(el).offsetTop
-    window.scrollTo({
-      top: elementPos - offset,
-      behavior: 'smooth'
-    })
-  }
-
-  /**
-   * Toggle .header-scrolled class to #header when page is scrolled
-   */
-  let selectHeader = select('#header')
-  if (selectHeader) {
-    const headerScrolled = () => {
-      if (window.scrollY > 100) {
-        selectHeader.classList.add('header-scrolled')
-      } else {
-        selectHeader.classList.remove('header-scrolled')
-      }
-    }
-    window.addEventListener('load', headerScrolled)
-    onscroll(document, headerScrolled)
-  }
-
-  /**
-   * Back to top button
-   */
-  let backtotop = select('.back-to-top')
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active')
-      } else {
-        backtotop.classList.remove('active')
-      }
-    }
-    window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
-  }
-
-  /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
-
-  /**
-   * Mobile nav dropdowns activate
-   */
-  on('click', '.navbar .dropdown > a', function(e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault()
-      this.nextElementSibling.classList.toggle('dropdown-active')
-    }
-  }, true)
-
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
-  on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
-      e.preventDefault()
-
-      let navbar = select('#navbar')
-      if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
-      scrollto(this.hash)
-    }
-  }, true)
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
 
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <!-- <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet"> -->
+  <!-- <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+      <img src="assets\img\reals_logo_png.png" id="logo" class="img-fluid" alt="">
+      <h1 class="logo me-auto">
+        <!-- <a href="index.html">Reals</a> -->
+      </h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active scroll-link" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto scroll-link" href="#aboutUs">About</a></li>
+          <li><a class="nav-link scrollto scroll-link" href="#footer_contact">Contact</a></li>
+          <li><a class="nav-link trigger-btn open-modal scroll-link" id="loginBtn" href="#loginModal" data-toggle="modal">Login</a></li>
+          <li><a class="getstarted scrollto open-modal scroll-link"  id="downloadNowBtn" href="#downloadNowModal" data-toggle="modal"><i class="bx bx-mobile-alt mobile-download"></i>Download</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <div id="hero" class="home-hero">
+
+    <!-- <div class="container"> -->
+      <!-- <canvas class="bg-canvas-dots" height="937.9750366210938" width="414.3999938964844"></canvas> -->
+      <div class="hero-container">
+        <div class="hero-container_left-image">
+          <img src="assets/img/left_image.png" class="hero-container_left-image-dim img-fluid" alt="">
+        </div>
+        
+        <div class="hero-container_content " data-aos="fade-up" data-aos-delay="200">
+          <!-- <h1>Recharge for everyone</h1> -->
+          <h1 class="hero-container_content_title">Recharge anytime, anywhere</h1>
+          <h2 class="hero-container_content_description justify-content-center">Your one-stop solution for seamless mobile services.</h2>
+          <div class="hero-container_content_action d-flex justify-content-center justify-content-lg-center">
+            <a href="#rechargeNowModal" class="btn-recharge-now scrollto open-modal scroll-link" data-toggle="modal">Recharge Now</a>
+          </div>
+        </div>
+
+        <div class="hero-container_right-image">
+          <img src="assets/img/right_image.png" class="hero-container_right-image-dim  img-fluid" alt="">
+        </div>
+
+      </div>
+    <!-- </div> -->
+
+  </div>
+  <!-- End Hero -->
 
 
-  /**
-   * Scroll with ofset on page load with hash links in the url
-   */
-  window.addEventListener('load', () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash)
-      }
-    }
-  });
+  <div id="main">
 
-  /**
-   * Preloader
-   */
-  let preloader = select('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove()
-    });
-  }
+    <div class="page-home__section-title justify-content-center">
+      <div>
+        <p class="base-text base-text--size-x-large">One platform for all your <br></p>
+        <span class="base-text base-text--size-xx-large base-text--title-font base-text--size-xx-large--bold page-home__section-title emphasize">
+          recharge <br>
+        </span>
+      </div>
+    </div>
 
-  /**
-   * Initiate  glightbox 
-   */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+    <div id="mainContent">
+    <!-- ======= Mobile recharge Section ======= -->
+    <div id="mobile-recharge-section" class="d-flex align-items-center services-section">
+      <div class="container mobile-recharge">
+        <div class="row">
+          <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-1 order-lg-1 services-img">
+            <img src="assets/img/animate_mob_recharge/black_mob.png" class="services-black-mob img-fluid" alt="">
+            <img src="assets/img/animate_mob_recharge/animate_mob_recharge.gif" class="mob-recharge-gif services-img-gif img-fluid"alt="">
+          </div>
 
-  /**
-   * Skills animation
-   */
-  let skilsContent = select('.skills-content');
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
-      }
-    })
-  }
+          <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1 services-desc">
+            <h2>Mobile Recharge</h2>
+            <h4>Say goodbye to the hassle of recharging your mobile. Instantly top up your mobile balance with just a
+              few taps. We support all major carriers, ensuring you're always in control of your communication needs.
+            </h4>
+          </div>
+        </div>
+      </div>
 
-  /**
-   * Porfolio isotope and filter
-   */
-  window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
-      });
+    </div>
+    <!-- End Mobile recharge -->
 
-      let portfolioFilters = select('#portfolio-flters li', true);
+    <!-- ======= Data Top-Up Section ======= -->
+    <div id="data-topup-section" class="d-flex align-items-center services-section">
+      <div class="container mobile-recharge">
+        <div class="row">
+          <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1 services-desc">
+            <h2>Data Top-Up</h2>
+            <h4>Running low on data? Stay connected to the world with our quick and hassle-free data top-up service.
+              Choose the plan that fits your needs and enjoy uninterrupted browsing, streaming, and socializing.
+            </h4>
+          </div>
 
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
+          <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-1 order-lg-1 services-img">
+            <img src="assets/img/animate_mob_recharge/black_mob.png" class="services-black-mob img-fluid" alt="">
+            <img src="assets/img/animate_data_topup/animate_data_topup.gif" class="mob-recharge-gif services-img-gif img-fluid" alt="">
+          </div>
+        </div>
+      </div>
 
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        portfolioIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
-        });
-      }, true);
-    }
+   </div>
+    <!-- End Data Top-Up -->
 
-  });
+    <!-- ======= Inbuilt Wallet Section ======= -->
+    <div id="inbuilt-wallet-section" class="d-flex align-items-center services-section">
+      <div class="container mobile-recharge">
+        <div class="row">
+          <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-1 order-lg-1 services-img">
+            <img src="assets/img/animate_mob_recharge/black_mob.png" class="services-black-mob img-fluid" alt="">
+            <img src="assets/img/animate_inbuilt_wallet/animate_inbuilt_wallet.gif" class="mob-recharge-gif services-img-gif img-fluid" alt="">
+          </div>
 
-  /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
+          <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1 services-desc">
+            <h2>Inbuilt Wallet</h2>
+            <h4>Simplify your payments with our secure, feature-packed inbuilt wallet. Save your payment details for faster transactions, 
+              manage your funds easily, and enjoy exclusive rewards and offers.
+            </h4>
+          </div>
+        </div>
+      </div>
 
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
+   </div>
+    <!-- End Inbuilt Wallet -->
 
-  /**
-   * Animation on scroll
-   */
-  window.addEventListener('load', () => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false
-    });
-  });
+    <!-- ======= Secure Transactions Section ======= -->
+    <div id="secure-transactions-section" class="d-flex align-items-center services-section">
+      <div class="container mobile-recharge">
+        <div class="row">
+          <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1 services-desc">
+            <h2>Secure Transactions</h2>
+            <h4>Your security is our top priority. With state-of-the-art encryption and secure payment gateways, you can
+              trust us to protect your personal and financial information during every transaction.
+            </h4>
+          </div>
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-1 order-lg-1 services-img">
+            <img src="assets/img/animate_mob_recharge/black_mob.png" class="services-black-mob img-fluid" alt="">
+            <img src="assets/img/animate_mob_recharge/animate_mob_recharge.gif" class="mob-recharge-gif services-img-gif img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+
+   </div>
+   </div>
+    <!-- End Secure Transactions -->
 
 
-}
+  </div><!-- End #main -->
 
-)();
-  
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
 
-var privacyContent ='<h3>Privacy Policy</h3>';                                                     
-privacyContent +='<p><strong>Effective Date:</strong> 09/12/2024</p>';
-privacyContent +='  <p>Reals ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, store, and share your information when you use our services.</p>';
-privacyContent +='<br>';
-privacyContent +='  <h5>1. Information We Collect</h5>';
-privacyContent +='  <p>We may collect the following types of information:</p>';
-privacyContent +='  <ul>';
-privacyContent +='    <li><strong>Personal Information:</strong> Name, email address, phone number, and payment details provided during account creation or transactions.</li>';
-privacyContent +='    <li><strong>Usage Data:</strong> Information about how you use our services, including IP address, device information, and browsing activity.</li>';
-privacyContent +='    <li><strong>Transactional Data:</strong> Records of mobile recharges, data top-ups, and wallet usage.</li>';
-privacyContent +='  </ul>';
-privacyContent +='<br>';
-privacyContent +='  <h5>2. How We Use Your Information</h5>';
-privacyContent +='  <p>We use the information we collect for the following purposes:</p>';
-privacyContent +='  <ul>';
-privacyContent +='    <li>To process transactions, including mobile recharges and data top-ups.</li>';
-privacyContent +='    <li>To provide and improve our services.</li>';
-privacyContent +='    <li>To secure your account and prevent fraud.</li>';
-privacyContent +='    <li>To send you updates, promotional offers, and service notifications.</li>';
-privacyContent +='    <li>To comply with legal obligations and resolve disputes.</li>';
-privacyContent +='  </ul>';
-privacyContent +='<br>';
-privacyContent +='  <h5>3. How We Share Your Information</h5>';
-privacyContent +='  <p>We do not sell or rent your personal information to third parties. However, we may share your information with:</p>';
-privacyContent +='  <ul>';
-privacyContent +='    <li><strong>Service Providers:</strong> Third-party partners who assist with payment processing, security, and other operational tasks.</li>';
-privacyContent +='    <li><strong>Legal Authorities:</strong> If required by law or in response to a valid legal request.</li>';
-privacyContent +='  </ul>';
-privacyContent +='<br>';
-privacyContent +='  <h5>4. Data Security</h5>';
-privacyContent +='  <p>We use industry-standard encryption and security measures to protect your personal information. Despite our efforts, no system can guarantee 100% security.</p>';
-privacyContent +='<br>';
-privacyContent +='  <h5>5. Your Rights</h5>';
-privacyContent +='  <p>You have the right to:</p>';
-privacyContent +='  <ul>';
-privacyContent +='    <li>Access, update, or delete your personal information by logging into your account or contacting us.</li>';
-privacyContent +='    <li>Opt-out of receiving marketing communications by following the unsubscribe instructions in our emails.</li>';
-privacyContent +='  </ul>';
-privacyContent +='<br>';
-privacyContent +='  <h5>6. Cookies and Tracking Technologies</h5>';
-privacyContent +='  <p>We use cookies and similar technologies to improve your experience on our website. These help us analyze usage patterns and deliver personalized content.</p>';
-privacyContent +='<br>';
-privacyContent +='  <h5>7. Third-Party Links</h5>';
-privacyContent +='  <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of these sites and encourage you to review their policies.</p>';
-privacyContent +='<br>';
-privacyContent +='  <h5>8. Changes to This Policy</h5>';
-privacyContent +='  <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page, and the "Effective Date" will be revised accordingly.</p>';
-privacyContent +='<br>';
-privacyContent +='  <h5>9. Contact Us</h5>';
-privacyContent +='  <p>If you have questions about this Privacy Policy or how we handle your information, please contact us:</p>';
-privacyContent +='  <p><strong>Email:</strong> relas@gmail.com</p>';
-privacyContent +='  <p><strong>Phone:</strong> +1 999-999-9999</p>';
+    <div class="footer-newsletter justify-content-center">
+      <!-- <div class="container"> -->
+        <!-- <div class="justify-content-center"> -->
+          <div class="layout-footer-newsletter__title">
+            <h2>Stay updated with Reals by signing up for our newsletter.</h2>
+            <form action="" method="post">
+              <input type="email" name="email" label="email">
+              <input type="submit" value="Subscribe">
+            </form>
+          </div>
+        <!-- </div> -->
+      <!-- </div> -->
+    </div>
 
-// Add Privacy Policy content to the modal
-document.getElementById("privacyPolicyContent").innerHTML = privacyContent;
-  
-// // Clear Login form on close
-// $(document).ready(function() {
-//   // When the modal is hidden, clear the form fields
-//   $('#loginModal').on('hidden.bs.modal', function () {
-//       $('#loginForm')[0].reset();
-//   });
-// });
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
 
-// // Clear Free Trial form on close
-// $(document).ready(function() {
-//   // When the modal is hidden, clear the form fields
-//   $('#freeTrialModal').on('hidden.bs.modal', function () {
-//       $('#freeTrialForm')[0].reset();
-//   });
-// });
+          <div class="col-lg-3 col-md-6 footer-contact" id="footer_contact">
+            <h3>Reals</h3>
+            <p>
+              Toronot, Ontario, <br>
+              Canada <br><br>
+              <strong>Phone:</strong> +1 (123) 456-7890<br>
+              <strong>Email:</strong> business@reals.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#" class="scroll-link">Home</a></li>
+              <!-- <li><i class="bx bx-chevron-right"></i> <a href="#aboutUs">About us</a></li> -->
+              <li><i class="bx bx-chevron-right"></i> <a href="#mainContent" class="scroll-link">Services</a></li>
+              <!-- <li><i class="bx bx-chevron-right"></i> <a href="#termsModal" data-toggle="modal">Terms of service</a></li> -->
+              <li><i class="bx bx-chevron-right open-modal"></i> <a href="#privacyModal"  class="scroll-link" data-toggle="modal">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <!-- <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="apply_form.html#applyCreator">Apply as a Creator</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+            </ul> -->
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <!-- <p>© Copyright Association. All Rights Reserved</p> -->
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Reals</span></strong>. All Rights Reserved
+      </div>
+
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 
-// $(document).ready(function() {
-//   $('#freeTrialModal').on('hidden.bs.modal', function () {
-//       $('#freeTrialForm')[0].reset();
-//   });
-// });
+  <!-- Modal boxes-->
 
-document.querySelectorAll('.open-modal').forEach(function (link) {
-  link.addEventListener('click', function (event) {
-    event.preventDefault();
-    const modalId = link.getAttribute('data-toggle'); // Get the target modal ID
-    const modal = new bootstrap.Modal(document.querySelector(modalId));
-    modal.show();
-  });
-});
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal fade loginModal">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Sign In</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form action="/examples/actions/confirmation.php" method="post" id="loginForm">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <input type="text" class="form-control" name="password" placeholder="Password" required="required">
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block btn-lg">Sign In</button>
+            </div>
+            <p class="hint-text"><a href="#">Forgot Password?</a></p>
+          </form>
+        </div>
+        <div class="modal-footer">Don't have an account? <a href="#">Create one</a></div>
+      </div>
+    </div>
+  </div>
 
-document.querySelectorAll('.scroll-link').forEach(link => {
-  link.addEventListener('click', function(event) {
-    event.preventDefault();
-    const targetId = this.getAttribute('href').substring(1); // Get the ID without #
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' }); // Scroll to the target element
-    }
-  });
-});
+  <!-- Download Now Modal -->
+  <div id="downloadNowModal" class="modal fade downloadNowModal">
+    <div class="modal-dialog modal-downloadNow">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Download app</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <img src="assets\img\dummy_QR.jpg" class=" img-fluid" alt="QRcode">
+        </div>
+        <div class="modal-footer">Scan QR code to download Reals app</div>
+      </div>
+    </div>
+  </div> 
+
+  <!-- Recharge Now Modal -->
+  <div id="rechargeNowModal" class="modal fade rechargeNowModal">
+    <div class="modal-dialog modal-freetrial">
+      <div class="modal-content" id="freeTrialModelcont">
+        <div class="modal-header">
+          <h4 class="modal-title">Recharge Now</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form action="/examples/actions/confirmation.php" method="post" id="freeTrialForm">
+            <!-- <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="text" class="form-control" name="Name" placeholder="Name" required="required">
+              </div>
+            </div> -->
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <input type="text" class="form-control" name="phone" placeholder="Phone number" required="required">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <input type="text" class="form-control" name="serviceprovider" placeholder="Service Provider"
+                  required="required">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <input type="text" class="form-control" name="email" placeholder="Email (Optional)" required="required">
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block btn-lg">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <!-- Privacy Modal -->
+  <div id="privacyModal" class="modal fade privacyModal">
+    <div class="modal-dialog modal-privacy">
+      <div class="modal-content">
+        <span class="close" data-dismiss="modal" aria-hidden="true">&times;</span>
+        <div id="privacyPolicyContent" class="modal-body">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Script for modal box-->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
