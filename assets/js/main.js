@@ -263,118 +263,64 @@
 
 }
 
-)()
-
-  var termsCond ='<h5>Terms and Conditions</h5>';                                                     
-  termsCond +='<p>';
-  termsCond +='  Welcome to Media Clout ("Page"). Please read these Terms and Conditions ("Terms") carefully before using the Page operated by Media Clout ("us", "we", or "our").';
-  termsCond +='  Your access to and use of the Page is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users, and others who access or use the Page.';
-  termsCond +='  By accessing or using the Page you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Page.';
-  termsCond +='</p>';
-  termsCond +='';
-  termsCond +='<h6>Content</h6>';
-  termsCond +='<p>';
-  termsCond +='  Our Page allows you to post, link, store, share and otherwise make available certain information, text, graphics, videos, or other material ("Content"). You are responsible for the Content that you post on or through the Page, including its legality, reliability, and appropriateness.';
-  termsCond +='  By posting Content on or through the Page, you represent and warrant that: (i) the Content is yours (you own it) and/or you have the right to use it and the right to grant us the rights and license as provided in these Terms, and (ii) that the posting of your Content on or through the Page does not violate the privacy rights, publicity rights, copyrights, contract rights or any other rights of any person or entity. We reserve the right to terminate the account of anyone found to be infringing on a copyright.';
-  termsCond +='  You retain any and all of your rights to any Content you submit, post or display on or through the Page and you are responsible for protecting those rights. We take no responsibility and assume no liability for Content you or any third party posts on or through the Page. However, by posting Content using the Page you grant us the right and license to use, modify, publicly perform, publicly display, reproduce, and distribute such Content on and through the Page. You agree that this license includes the right for us to make your Content available to other users of the Page, who may also use your Content subject to these Terms.';
-  termsCond +='</p>';
-  termsCond +='';
-  termsCond +='<h6>Accounts</h6>';
-  termsCond +='<p>';
-  termsCond +='  When you create an account with us, you guarantee that you are above the age of 18, and that the information you provide us is accurate, complete, and current at all times. Inaccurate, incomplete, or obsolete information may result in the immediate termination of your account on the Page.';
-  termsCond +='  You are responsible for maintaining the confidentiality of your account and password, including but not limited to the restriction of access to your computer and/or account. You agree to accept responsibility for any and all activities or actions that occur under your account and/or password, whether your password is with our Page or a third-party service. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.';
-  termsCond +='</p>';
-  termsCond +='<h6>Links To Other Web Sites</h6>';
-  termsCond +='<p>';
-  termsCond +='  Our Page may contain links to third-party web sites or services that are not owned or controlled by Media Clout.';
-  termsCond +='  Media Clout has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that Media Clout shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.';
-  termsCond +='  We strongly advise you to read the terms and conditions and privacy policies of any third-party web sites or services that you visit.';
-  termsCond +='</p>';
-  termsCond +='<h6>Termination</h6>';
-  termsCond +='<p>';
-  termsCond +='  We may terminate or suspend access to our Page immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.';
-  termsCond +='  All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.';
-  termsCond +='  We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.';
-  termsCond +='  Upon termination, your right to use the Page will immediately cease. If you wish to terminate your account, you may simply discontinue using the Page.';
-  termsCond +='</p>';
-  termsCond +='';
-  termsCond +='<h6>Governing Law</h6>';
-  termsCond +='<p>';
-  termsCond +='  These Terms shall be governed and construed in accordance with the laws of [Your Country], without regard to its conflict of law provisions.';
-  termsCond +='  Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Page, and supersede and replace any prior agreements we might have had between us regarding the Page.';
-  termsCond +='</p>';
-  termsCond +='';
-  termsCond +='<h6>Changes</h6>';
-  termsCond +='<p>';
-  termsCond +='  We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.';
-  termsCond +='  By continuing to access or use our Page after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Page.';
-  termsCond +='</p>';
-  termsCond +='  ';
-  termsCond +='<h6>Contact Us</h6>';
-  termsCond +='<p>';
-  termsCond +='  If you have any questions about these Terms, please contact us.';
-  termsCond +='</p>';
-
-  // Add the Terms and Conditions content to the modal
-  document.getElementById("termsAndConditions").innerHTML = termsCond;
+)();
   
 
-  var privacyContent ='<h3>Privacy Policy</h3>';                                                     
-  privacyContent +='<p><strong>Effective Date:</strong> 09/12/2024</p>';
-  privacyContent +='  <p>Reals ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, store, and share your information when you use our services.</p>';
-  privacyContent +='<br>';
-  privacyContent +='  <h5>1. Information We Collect</h5>';
-  privacyContent +='  <p>We may collect the following types of information:</p>';
-  privacyContent +='  <ul>';
-  privacyContent +='    <li><strong>Personal Information:</strong> Name, email address, phone number, and payment details provided during account creation or transactions.</li>';
-  privacyContent +='    <li><strong>Usage Data:</strong> Information about how you use our services, including IP address, device information, and browsing activity.</li>';
-  privacyContent +='    <li><strong>Transactional Data:</strong> Records of mobile recharges, data top-ups, and wallet usage.</li>';
-  privacyContent +='  </ul>';
-  privacyContent +='<br>';
-  privacyContent +='  <h5>2. How We Use Your Information</h5>';
-  privacyContent +='  <p>We use the information we collect for the following purposes:</p>';
-  privacyContent +='  <ul>';
-  privacyContent +='    <li>To process transactions, including mobile recharges and data top-ups.</li>';
-  privacyContent +='    <li>To provide and improve our services.</li>';
-  privacyContent +='    <li>To secure your account and prevent fraud.</li>';
-  privacyContent +='    <li>To send you updates, promotional offers, and service notifications.</li>';
-  privacyContent +='    <li>To comply with legal obligations and resolve disputes.</li>';
-  privacyContent +='  </ul>';
-  privacyContent +='<br>';
-  privacyContent +='  <h5>3. How We Share Your Information</h5>';
-  privacyContent +='  <p>We do not sell or rent your personal information to third parties. However, we may share your information with:</p>';
-  privacyContent +='  <ul>';
-  privacyContent +='    <li><strong>Service Providers:</strong> Third-party partners who assist with payment processing, security, and other operational tasks.</li>';
-  privacyContent +='    <li><strong>Legal Authorities:</strong> If required by law or in response to a valid legal request.</li>';
-  privacyContent +='  </ul>';
-  privacyContent +='<br>';
-  privacyContent +='  <h5>4. Data Security</h5>';
-  privacyContent +='  <p>We use industry-standard encryption and security measures to protect your personal information. Despite our efforts, no system can guarantee 100% security.</p>';
-  privacyContent +='<br>';
-  privacyContent +='  <h5>5. Your Rights</h5>';
-  privacyContent +='  <p>You have the right to:</p>';
-  privacyContent +='  <ul>';
-  privacyContent +='    <li>Access, update, or delete your personal information by logging into your account or contacting us.</li>';
-  privacyContent +='    <li>Opt-out of receiving marketing communications by following the unsubscribe instructions in our emails.</li>';
-  privacyContent +='  </ul>';
-  privacyContent +='<br>';
-  privacyContent +='  <h5>6. Cookies and Tracking Technologies</h5>';
-  privacyContent +='  <p>We use cookies and similar technologies to improve your experience on our website. These help us analyze usage patterns and deliver personalized content.</p>';
-  privacyContent +='<br>';
-  privacyContent +='  <h5>7. Third-Party Links</h5>';
-  privacyContent +='  <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of these sites and encourage you to review their policies.</p>';
-  privacyContent +='<br>';
-  privacyContent +='  <h5>8. Changes to This Policy</h5>';
-  privacyContent +='  <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page, and the "Effective Date" will be revised accordingly.</p>';
-  privacyContent +='<br>';
-  privacyContent +='  <h5>9. Contact Us</h5>';
-  privacyContent +='  <p>If you have questions about this Privacy Policy or how we handle your information, please contact us:</p>';
-  privacyContent +='  <p><strong>Email:</strong> relas@gmail.com</p>';
-  privacyContent +='  <p><strong>Phone:</strong> +1 999-999-9999</p>';
+var privacyContent ='<h3>Privacy Policy</h3>';                                                     
+privacyContent +='<p><strong>Effective Date:</strong> 09/12/2024</p>';
+privacyContent +='  <p>Reals ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, store, and share your information when you use our services.</p>';
+privacyContent +='<br>';
+privacyContent +='  <h5>1. Information We Collect</h5>';
+privacyContent +='  <p>We may collect the following types of information:</p>';
+privacyContent +='  <ul>';
+privacyContent +='    <li><strong>Personal Information:</strong> Name, email address, phone number, and payment details provided during account creation or transactions.</li>';
+privacyContent +='    <li><strong>Usage Data:</strong> Information about how you use our services, including IP address, device information, and browsing activity.</li>';
+privacyContent +='    <li><strong>Transactional Data:</strong> Records of mobile recharges, data top-ups, and wallet usage.</li>';
+privacyContent +='  </ul>';
+privacyContent +='<br>';
+privacyContent +='  <h5>2. How We Use Your Information</h5>';
+privacyContent +='  <p>We use the information we collect for the following purposes:</p>';
+privacyContent +='  <ul>';
+privacyContent +='    <li>To process transactions, including mobile recharges and data top-ups.</li>';
+privacyContent +='    <li>To provide and improve our services.</li>';
+privacyContent +='    <li>To secure your account and prevent fraud.</li>';
+privacyContent +='    <li>To send you updates, promotional offers, and service notifications.</li>';
+privacyContent +='    <li>To comply with legal obligations and resolve disputes.</li>';
+privacyContent +='  </ul>';
+privacyContent +='<br>';
+privacyContent +='  <h5>3. How We Share Your Information</h5>';
+privacyContent +='  <p>We do not sell or rent your personal information to third parties. However, we may share your information with:</p>';
+privacyContent +='  <ul>';
+privacyContent +='    <li><strong>Service Providers:</strong> Third-party partners who assist with payment processing, security, and other operational tasks.</li>';
+privacyContent +='    <li><strong>Legal Authorities:</strong> If required by law or in response to a valid legal request.</li>';
+privacyContent +='  </ul>';
+privacyContent +='<br>';
+privacyContent +='  <h5>4. Data Security</h5>';
+privacyContent +='  <p>We use industry-standard encryption and security measures to protect your personal information. Despite our efforts, no system can guarantee 100% security.</p>';
+privacyContent +='<br>';
+privacyContent +='  <h5>5. Your Rights</h5>';
+privacyContent +='  <p>You have the right to:</p>';
+privacyContent +='  <ul>';
+privacyContent +='    <li>Access, update, or delete your personal information by logging into your account or contacting us.</li>';
+privacyContent +='    <li>Opt-out of receiving marketing communications by following the unsubscribe instructions in our emails.</li>';
+privacyContent +='  </ul>';
+privacyContent +='<br>';
+privacyContent +='  <h5>6. Cookies and Tracking Technologies</h5>';
+privacyContent +='  <p>We use cookies and similar technologies to improve your experience on our website. These help us analyze usage patterns and deliver personalized content.</p>';
+privacyContent +='<br>';
+privacyContent +='  <h5>7. Third-Party Links</h5>';
+privacyContent +='  <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of these sites and encourage you to review their policies.</p>';
+privacyContent +='<br>';
+privacyContent +='  <h5>8. Changes to This Policy</h5>';
+privacyContent +='  <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page, and the "Effective Date" will be revised accordingly.</p>';
+privacyContent +='<br>';
+privacyContent +='  <h5>9. Contact Us</h5>';
+privacyContent +='  <p>If you have questions about this Privacy Policy or how we handle your information, please contact us:</p>';
+privacyContent +='  <p><strong>Email:</strong> relas@gmail.com</p>';
+privacyContent +='  <p><strong>Phone:</strong> +1 999-999-9999</p>';
 
-
-    // Add Privacy Policy content to the modal
-    document.getElementById("privacyPolicyContent").innerHTML = privacyContent;
+// Add Privacy Policy content to the modal
+document.getElementById("privacyPolicyContent").innerHTML = privacyContent;
   
 // // Clear Login form on close
 // $(document).ready(function() {
@@ -405,5 +351,16 @@ document.querySelectorAll('.open-modal').forEach(function (link) {
     const modalId = link.getAttribute('data-toggle'); // Get the target modal ID
     const modal = new bootstrap.Modal(document.querySelector(modalId));
     modal.show();
+  });
+});
+
+document.querySelectorAll('.scroll-link').forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+    const targetId = this.getAttribute('href').substring(1); // Get the ID without #
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' }); // Scroll to the target element
+    }
   });
 });
